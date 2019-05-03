@@ -9,15 +9,16 @@ import { MovieService } from './services/movie.service';
 export class AppComponent implements OnInit {
   title = 'MovieCategoryComparator';
 
-  constructor(private movie: MovieService) {}
+  constructor(private movie: MovieService) {
+    this.movie.getGenres().subscribe( genres => {
+      this.movie.genres = genres;
+      console.log(this.movie.genres);
+    });
+  }
 
   ngOnInit() {
-    this.movie.getGenres();
-
     setTimeout(() => {
       // this.movie.getGenreMovies(this.movie.genres.genres[0].id);
-      this.movie.discoverCategory(12);
-      this.movie.getPoster(299534);
     }, 1000);
   }
 }

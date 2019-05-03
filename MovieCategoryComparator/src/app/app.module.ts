@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'  ;
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
@@ -10,12 +10,14 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie.service';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

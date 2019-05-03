@@ -26,8 +26,10 @@ export class SearchbarComponent implements OnInit {
 
   select(index) {
     this.selectedCategory = this.categories.genres[index];
+    this.movieService.selectedCategory = this.categories.genres[index];
     console.log('selected: ' + this.selectedCategory);
     console.log(this.selectedCategory);
+    this.movieService.discoverCategory(this.selectedCategory.id);
   }
 
 }
