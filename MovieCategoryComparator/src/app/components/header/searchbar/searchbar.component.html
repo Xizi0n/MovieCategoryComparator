@@ -1,0 +1,12 @@
+<div class="flex">
+  <button mat-button [matMenuTriggerFor]="menu">Category: <mat-icon>arrow_drop_down</mat-icon></button>
+  <input type="text" class="category" [value]="selectedCategory.name" disabled placeholder="Choose category">
+  <input type="text" class="query" [(ngModel)]="queryString" placeholder="What are you looking for?">
+  <a ><mat-icon>search</mat-icon></a>
+
+
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let category of categories.genres; let i = index" (click)="select(i)">{{category.name}}</button>
+  </mat-menu>
+
+</div>
