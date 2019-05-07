@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { MovieService } from 'src/app/services/movie.service';
-import { fillProperties } from '@angular/core/src/util/property';
 
 @Component({
   selector: 'app-landing',
@@ -41,8 +40,20 @@ export class LandingComponent implements OnInit {
       data: {
         datasets: [
 
-        ]
-      }
+        ],
+        labels: []
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            display: true,
+            ticks: {
+                suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                suggestedMax: 10
+            }
+        }]
+        }
+    }
     });
   }
 
@@ -95,7 +106,7 @@ export class LandingComponent implements OnInit {
   }
 
   getRandomColor() {
-    let letters = '0123456789ABCDEF';
+    const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];

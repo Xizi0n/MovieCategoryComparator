@@ -15,7 +15,7 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   // Get category names and ids
-  getGenres() {
+  getGenres(): Observable<any> {
     return this.http.get(environment.baseUrl + 'genre/movie/list?api_key=' + environment.apiKey
       + '&language=' + environment.language);
   }
@@ -31,7 +31,7 @@ export class MovieService {
       });
   }
   // Get movies from given category
-  discoverCategory(categoryId): any {
+  discoverCategory(categoryId): Observable<any> {
     return this.http.get(environment.baseUrl + 'discover/movie?api_key=' + environment.apiKey
       + '&with_genres=' + categoryId);
   }

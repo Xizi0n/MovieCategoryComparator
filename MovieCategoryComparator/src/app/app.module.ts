@@ -11,13 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie.service';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { DoughnutChartComponent } from './components/compare/doughnut-chart/doughnut-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchbarComponent,
-    LandingComponent
+    LandingComponent,
+    CompareComponent,
+    DoughnutChartComponent,
   ],
   imports: [
     BrowserModule,

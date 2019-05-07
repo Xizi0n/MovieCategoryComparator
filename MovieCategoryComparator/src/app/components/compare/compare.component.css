@@ -1,0 +1,82 @@
+
+.container {
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    margin: 0 auto;
+    overflow: auto;
+    
+    height: calc(100vh - 48px);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.85);
+    margin-top: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.mainChart {
+    height: 250px;
+    width: 60%;
+    margin: 0 auto;
+    min-width: 300px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 0 0 5px 5px;
+}
+
+mat-radio-button {
+    margin-left: 16px;
+}
+
+app-doughnut-chart {
+    width: 50%;
+    height: 275px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 300px;
+}
+
+.flexItem  {
+    width: 49%;
+    min-width: 300px;
+    display: block;
+}
+
+mat-toolbar {
+    height: 40px;
+    justify-content: center;
+}
+
+mat-list {
+    background-color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+}
+
+.flexList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.property {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}

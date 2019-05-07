@@ -5,10 +5,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
-
-
-
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -21,8 +19,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
-    MatIconModule
-
+    MatIconModule,
+    MatRadioModule,
+    MatListModule
   ],
   exports: [
     MatToolbarModule,
@@ -30,7 +29,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule,
+    MatListModule
   ],
   providers: []
 })
