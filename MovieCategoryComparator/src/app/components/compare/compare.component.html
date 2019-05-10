@@ -1,15 +1,15 @@
 <div class="container">
   <div class="options">
     <mat-form-field>
-      <mat-label>Category to compare</mat-label>
+      <mat-label>Categories</mat-label>
       <mat-select [(ngModel)]="selectedFirst" (selectionChange)="firstSelectionsChanged($event)">
         <mat-option *ngFor="let genre of genres" [value]="genre">
           {{genre.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field style="margin-left: 20%">
-      <mat-label>Category to compare</mat-label>
+    <mat-form-field class="rightInput">
+      <mat-label>Categories</mat-label>
       <mat-select [(ngModel)]="selectedSecond" (selectionChange)="secondSelectionsChanged($event)">
         <mat-option *ngFor="let genre of genres" [value]="genre">
           {{genre.name}}

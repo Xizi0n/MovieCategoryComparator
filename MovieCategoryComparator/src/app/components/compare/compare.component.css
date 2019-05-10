@@ -22,6 +22,7 @@
     height: 250px;
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 30px;
     min-width: 300px;
     background-color: rgba(255,255,255,0.8);
     border-radius: 0 0 5px 5px;
@@ -80,6 +81,10 @@ mat-list {
     font-size: 20px;
 }
 
+.rightInput {
+    margin-left: 20%;
+}
+
 
 @media only screen and (max-width: 1100px) {
     .options {
@@ -103,5 +108,11 @@ mat-list {
     }
     .flexItem {
         width: 100%;
+    }
+    .rightInput {
+        margin-left: 25px;
+    }
+    mat-form-field {
+        width: 125px;
     }
 }
