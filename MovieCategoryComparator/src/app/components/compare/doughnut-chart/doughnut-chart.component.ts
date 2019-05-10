@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Input, OnChanges } from '@angular/core';
 import { Chart } from 'chart.js';
+import { fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-doughnut-chart',
@@ -16,6 +18,11 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
             '#000075', '#808080', '#003797']; */
 
   constructor() {
+    const resize$ = fromEvent(window, 'resize').pipe(
+      debounceTime(500)
+    ).subscribe( () => {
+      this.chart.resize();
+    });
   }
 
   ngOnInit() {
@@ -35,6 +42,8 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
         }],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         legend: {
            display: false
         }

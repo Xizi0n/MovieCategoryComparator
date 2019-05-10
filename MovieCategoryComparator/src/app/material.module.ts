@@ -7,6 +7,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -21,7 +22,8 @@ import {MatListModule} from '@angular/material/list';
     MatSelectModule,
     MatIconModule,
     MatRadioModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatToolbarModule,
@@ -31,7 +33,8 @@ import {MatListModule} from '@angular/material/list';
     MatSelectModule,
     MatIconModule,
     MatRadioModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: []
 })

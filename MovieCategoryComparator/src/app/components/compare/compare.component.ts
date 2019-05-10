@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { Chart } from 'chart.js';
+import { fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 
 @Component({
@@ -36,7 +38,7 @@ export class CompareComponent implements OnInit {
 
   firstMovies = [];
   secondMovies = [];
-  constructor(private movieS: MovieService) { }
+  constructor(private movieS: MovieService) {}
 
   ngOnInit() {
     this.movieS.getGenres().subscribe(genres => {
@@ -84,6 +86,8 @@ export class CompareComponent implements OnInit {
         labels: []
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 display: true,

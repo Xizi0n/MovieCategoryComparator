@@ -1,7 +1,8 @@
 .container {
     height: 275px;
     width: auto;
-
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 canvas {

@@ -25,14 +25,16 @@
   <div class="mainChart">
     <canvas #myChart style="width:100%;height:100%;"> {{chart}}</canvas>
   </div>
-  <div class="flex" *ngIf="firstChildData !== null && firstChildData !== undefined && secondChildData !== null && secondChildData !== undefined">
-    <div class="flexItem">
-      <mat-toolbar color="primary"><span>Contribution of Movies in {{selectedFirst.name}}</span></mat-toolbar>
-      <app-doughnut-chart  [myData]="firstChildData"></app-doughnut-chart>
-    </div>
-    <div class="flexItem">
-      <mat-toolbar color="primary"><span>Contribution of Movies in {{selectedSecond.name}}</span></mat-toolbar>
-      <app-doughnut-chart [myData]="secondChildData"></app-doughnut-chart>
+  <div>
+    <div class="flex" *ngIf="firstChildData !== null && firstChildData !== undefined && secondChildData !== null && secondChildData !== undefined">
+      <div class="flexItem">
+        <mat-toolbar color="primary"><span>Contribution of Movies in {{selectedFirst.name}}</span></mat-toolbar>
+        <app-doughnut-chart [myData]="firstChildData"></app-doughnut-chart>
+      </div>
+      <div class="flexItem">
+        <mat-toolbar color="primary"><span>Contribution of Movies in {{selectedSecond.name}}</span></mat-toolbar>
+        <app-doughnut-chart [myData]="secondChildData"></app-doughnut-chart>
+      </div>
     </div>
   </div>
   <div class="flexList" *ngIf="firstStatisticData !== null && firstStatisticData !== undefined && secondStatisticData !== null && secondStatisticData !== undefined">
@@ -40,17 +42,17 @@
       <mat-toolbar color="primary" style="margin-top:50px"><span>Statistics of {{selectedFirst.name}}</span></mat-toolbar>
       <mat-list role="list" style="border-right: 2px solid #212121;">
         <div class="property">Least Popular</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.minPopularity.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minPopularity.popularity}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.minPopularity.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minPopularity.popularity}}</mat-list-item>
         <div class="property">Most Popular</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.maxPopularity.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxPopularity.popularity}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.maxPopularity.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxPopularity.popularity}}</mat-list-item>
         <div class="property">Least Vote Average</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.minVoteAverage.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minVoteAverage.vote_average}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.minVoteAverage.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minVoteAverage.vote_average}}</mat-list-item>
         <div class="property">Most Vote Average</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.maxVoteAverage.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxVoteAverage.vote_average}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.maxVoteAverage.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxVoteAverage.vote_average}}</mat-list-item>
         <div class="property">Least Vote Count</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.minVoteCount.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minVoteCount.vote_count}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.minVoteCount.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.minVoteCount.vote_count}}</mat-list-item>
         <div class="property">Most Vote Count</div>
-        <mat-list-item  role="listitem">{{firstStatisticData.maxVoteCount.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxVoteCount.vote_count}}</mat-list-item>
+        <mat-list-item role="listitem">{{firstStatisticData.maxVoteCount.title}} <span style="flex: 1 1 auto"></span>{{firstStatisticData.maxVoteCount.vote_count}}</mat-list-item>
 
       </mat-list>
     </div>

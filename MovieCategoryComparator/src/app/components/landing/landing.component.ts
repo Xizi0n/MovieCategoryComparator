@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { MovieService } from 'src/app/services/movie.service';
+import { debounceTime } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -12,12 +14,20 @@ export class LandingComponent implements OnInit {
   @ViewChild('myChart') private chartRef;
   chart: any;
   movies;
+  moviesArrived = false;
 
-  constructor(private movieS: MovieService) { }
+  constructor(private movieS: MovieService) {
+    /* const resize$ = fromEvent(window, 'resize').pipe(
+      debounceTime(500)
+    ).subscribe( () => {
+      this.chart.resize();
+    }); */
+  }
 
   ngOnInit() {
     setTimeout(() => {
       this.movieS.getMoviesFromAllCategorys().then(adat => {
+        this.moviesArrived = true;
         console.log('adat');
         console.log(adat);
         this.movies = adat;
@@ -44,6 +54,8 @@ export class LandingComponent implements OnInit {
         labels: []
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [{
             display: true,

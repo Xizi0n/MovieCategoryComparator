@@ -4,7 +4,6 @@
     background-color: rgba(0,0,0,0.7);
     margin: 0 auto;
     overflow: auto;
-    
     height: calc(100vh - 48px);
 }
 
@@ -79,4 +78,30 @@ mat-list {
     height: 30px;
     line-height: 30px;
     font-size: 20px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .options {
+        width: 100%;
+    }
+    .mainChart {
+        width: 100%;
+    }
+    .flex {
+        width: 100%;
+    }
+    .flexList {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .flex {
+        min-height: 700px;
+    }
+    .flexItem {
+        width: 100%;
+    }
 }
