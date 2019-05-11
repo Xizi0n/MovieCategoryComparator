@@ -4,8 +4,6 @@
       <mat-panel-title>
         {{movie.title}}
         <div style="flex: 1 1 auto;"></div>
-        <mat-progress-spinner class="example-margin" [diameter]="19" [color]="color" [mode]="mode" [value]="movie.vote_average *10">
-        </mat-progress-spinner>
         <div style="margin-left: 10px;" [ngClass]="{'good': good, 'average': average, 'bad': bad}">
           Rating: {{movie.vote_average *10}}%
         </div>
@@ -17,10 +15,14 @@
           <div class="poster">
             <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" title="{{movieDetails.overview}}">
           </div>
+          <circle-progress [percent]="this.movieDetails.vote_average *10" [radius]="130" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [innerStrokeColor]="innerStrokeColor"
+          [outerStrokeColor]="outerStrokeColor"[animation]="true" [animationDuration]="800" [showSubtitle]="false" [titleFontSize]='40' [unitsFontSize]='40' ></circle-progress>
           <mat-list role="list">
-            <mat-list-item role="listitem" *ngIf="movieDetails.budget !== 0"><b>Budget: </b>&nbsp; {{movieDetails.budget | number: '':'en-US'}}$</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.budget !== 0"><b>Budget: </b>&nbsp;
+              {{movieDetails.budget | number: '':'en-US'}}$</mat-list-item>
             <mat-list-item role="listitem" *ngIf="movieDetails.budget === 0"><b>Budget: </b>&nbsp; N/A </mat-list-item>
-            <mat-list-item role="listitem" *ngIf="movieDetails.revenue !== 0"><b>Revenue: </b>&nbsp; {{movieDetails.revenue | number: '':'en-US'}}$</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.revenue !== 0"><b>Revenue: </b>&nbsp;
+              {{movieDetails.revenue | number: '':'en-US'}}$</mat-list-item>
             <mat-list-item role="listitem" *ngIf="movieDetails.revenue === 0"><b>Revenue: </b>&nbsp; N/A</mat-list-item>
             <mat-list-item role="listitem"><b>Release date:</b>&nbsp; {{movieDetails.release_date}}</mat-list-item>
             <mat-list-item role="listitem"><b>Number of ratings:</b>&nbsp; {{movieDetails.vote_count}}</mat-list-item>
@@ -30,10 +32,14 @@
           <mat-list role="list">
             <mat-list-item role="listitem"><b>Popularity:</b>&nbsp; {{movieDetails.popularity}}</mat-list-item>
             <mat-list-item role="listitem"><b>Homepage:</b>&nbsp;<a href="{{movieDetails.homepage}}">View</a></mat-list-item>
-            <mat-list-item role="listitem" *ngIf="movieDetails.production_companies[0] !== undefined"><b>Production company:</b>&nbsp; {{movieDetails.production_companies[0].name}}</mat-list-item>
-            <mat-list-item role="listitem" *ngIf="movieDetails.production_companies[0] === undefined"><b>Production company:</b>&nbsp; N/A</mat-list-item>
-            <mat-list-item role="listitem" *ngIf="movieDetails.production_countries[0] !== undefined"><b>Production country:</b>&nbsp; {{movieDetails.production_countries[0].name}}</mat-list-item>
-            <mat-list-item role="listitem" *ngIf="movieDetails.production_countries[0] === undefined"><b>Production country:</b>&nbsp; N/A</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.production_companies[0] !== undefined"><b>Production
+                company:</b>&nbsp; {{movieDetails.production_companies[0].name}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.production_companies[0] === undefined"><b>Production
+                company:</b>&nbsp; N/A</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.production_countries[0] !== undefined"><b>Production
+                country:</b>&nbsp; {{movieDetails.production_countries[0].name}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="movieDetails.production_countries[0] === undefined"><b>Production
+                country:</b>&nbsp; N/A</mat-list-item>
             <mat-list-item role="listitem"><b>Runtime:</b>&nbsp; {{movieDetails.runtime}} minutes</mat-list-item>
             <mat-list-item role="listitem"><b>Original language:</b>&nbsp; {{movieDetails.original_language}}</mat-list-item>
           </mat-list>
@@ -42,3 +48,15 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<!-- .good {
+  color: #00C74C;
+}
+
+.average {
+  color: #FFBB45;
+}
+
+.bad {
+  color: #FF605C;
+} -->

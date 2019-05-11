@@ -16,6 +16,16 @@ import { DoughnutChartComponent } from './components/compare/doughnut-chart/doug
 import { DetailComponent } from './components/details/detail/detail.component';
 import { DetailItemComponent } from './components/details/detail-item/detail-item.component';
 import { LOCALE_ID } from '@angular/core';
+import { NgCircleProgressModule } from '../../node_modules/ng-circle-progress';
+
+const settings = {
+  radius: 100,
+  outerStrokeWidth: 16,
+  innerStrokeWidth: 8,
+  outerStrokeColor: '#78C000',
+  innerStrokeColor: '#C7E596',
+  animationDuration: 300,
+};
 
 
 @NgModule({
@@ -35,7 +45,8 @@ import { LOCALE_ID } from '@angular/core';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgCircleProgressModule.forRoot(settings)
   ],
   providers: [
     MovieService,

@@ -17,6 +17,8 @@ export class DetailItemComponent implements OnInit {
   good = false;
   average = false;
   bad = false;
+  outerStrokeColor;
+  innerStrokeColor;
 
   constructor(private movieS: MovieService) {}
 
@@ -26,11 +28,17 @@ export class DetailItemComponent implements OnInit {
       this.movieDetails = data;
       if (this.movieDetails.vote_average < 5 ) {
         this.bad = true;
+        this.outerStrokeColor = '#FF605C';
+        this.innerStrokeColor = '#FC8A88';
       } else {
         if (this.movieDetails.vote_average >= 5 && this.movieDetails.vote_average < 7.5 ) {
           this.average = true;
+          this.outerStrokeColor = '#FFBB45';
+          this.innerStrokeColor = '#FFCE7A';
         } else {
           this.good = true;
+          this.outerStrokeColor = '#00C74C';
+          this.innerStrokeColor = '#56C47E';
         }
       }
       this.gotDetails = true;
@@ -40,3 +48,15 @@ export class DetailItemComponent implements OnInit {
   }
 
 }
+
+/* .good {
+  color: #00C74C;
+}
+
+.average {
+  color: #FFBB45;
+}
+
+.bad {
+  color: #FF605C;
+} */
