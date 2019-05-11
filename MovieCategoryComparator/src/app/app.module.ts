@@ -13,6 +13,10 @@ import { SearchbarComponent } from './components/header/searchbar/searchbar.comp
 import { LandingComponent } from './components/landing/landing.component';
 import { CompareComponent } from './components/compare/compare.component';
 import { DoughnutChartComponent } from './components/compare/doughnut-chart/doughnut-chart.component';
+import { DetailComponent } from './components/details/detail/detail.component';
+import { DetailItemComponent } from './components/details/detail-item/detail-item.component';
+import { LOCALE_ID } from '@angular/core';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,8 @@ import { DoughnutChartComponent } from './components/compare/doughnut-chart/doug
     LandingComponent,
     CompareComponent,
     DoughnutChartComponent,
+    DetailComponent,
+    DetailItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,8 @@ import { DoughnutChartComponent } from './components/compare/doughnut-chart/doug
     BrowserAnimationsModule
   ],
   providers: [
-    MovieService
+    MovieService,
+    {provide: LOCALE_ID, useValue: 'en-US' }
   ],
   bootstrap: [AppComponent]
 })

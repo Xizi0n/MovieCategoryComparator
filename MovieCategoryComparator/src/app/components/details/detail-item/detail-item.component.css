@@ -1,0 +1,44 @@
+
+.poster {
+    float: left;
+}
+
+.poster img {
+    max-width: 200px;
+    height: auto;
+}
+
+.spinner {
+    height: 60px;
+    width: 60px;
+}
+
+.overview {
+    width: calc( 100% - 200px);
+    padding: 16px;
+    margin-left: 200px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.flex mat-list {
+    width: 30%;
+    min-width: 300px;
+}
+
+.good {
+    color: #00C74C;
+}
+
+.average {
+    color: #FFBB45;
+}
+
+.bad {
+    color: #FF605C;
+}

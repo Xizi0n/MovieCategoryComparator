@@ -11,6 +11,10 @@ mat-toolbar {
     cursor: pointer;
 }
 
+.button {
+    margin-right: 16px;
+}
+
 .burger {
     display: none;
     margin-left: 15px;

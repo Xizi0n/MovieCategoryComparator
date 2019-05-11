@@ -2,10 +2,12 @@
   <div class="brand" routerLink="">MovieCategoryComparator</div>
   <div class="spacer"></div>
   <div routerLink="compare" style="cursor:pointer;" class="button">Compare</div>
+  <div routerLink="details" style="cursor:pointer;" class="button">Details</div>
   <button mat-button [matMenuTriggerFor]="menu" class="burger">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="compare">Compare</button>
+    <button mat-menu-item routerLink="details">Details</button>
   </mat-menu>
 </mat-toolbar>

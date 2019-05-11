@@ -69,5 +69,9 @@ export class MovieService {
     });
   }
 
+  getMovieById(id) {
+    return this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + environment.apiKey + '&language=en-US');
+  }
+
 
 }
